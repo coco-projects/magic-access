@@ -3,7 +3,6 @@
 	"description"          : "\\ArrayAccess, \\Countable, \\IteratorAggregate and __set,__get implementations",
 	"type"                 : "library",
 	"license"              : "MIT",
-	"minimum-stability"    : "dev",
 	"require"              : {
 		"php" : ">=8.0"
 	},
