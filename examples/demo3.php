@@ -4,14 +4,15 @@
 
     class A
     {
+        public mixed $b;
         use \Coco\magicAccess\MagicMethod;
     }
 
     $a = new A();
 
-    $a->b   = [];
-    $a->b[] = 'a';
-    $a->b[][] = 'b';
+    $a->b          = [];
+    $a->b[]        = 'a';
+    $a->b[][]      = 'b';
     $a->b[][]['h'] = 'c';
 
     //b
@@ -19,3 +20,6 @@
 
     //c
     echo $a->b[2][0]['h'];
+
+    print_r($a->b);
+    exit;;

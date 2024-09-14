@@ -4,6 +4,8 @@
 
     class A
     {
+        public mixed $b;
+        public mixed $c;
         use \Coco\magicAccess\MagicMethod;
     }
 
