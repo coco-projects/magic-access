@@ -60,7 +60,7 @@ trait MagicArrayTrait
         $key = $this->hash($offset);
 
         if (!isset($this->data[$key])) {
-            $this->data[$key] = [];
+            $this->data[$key] = null;
         }
 
         return $this->data[$key];
