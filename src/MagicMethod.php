@@ -6,36 +6,29 @@
 
 trait MagicMethod
 {
-    /**
-     * @param string $name
-     *
-     * @return mixed|null
-     */
+    private array $data = [];
+
     public function &__get(string $name)
     {
-        $var = $this->$name ?? null;
+        if (!isset($this->data[$name])) {
+            $this->data[$name] = new Data();
+        }
+        $var = &$this->data[$name]->data;
 
         return $var;
     }
 
-    /**
-     * @param string $name
-     * @param mixed  $value
-     *
-     * @return void
-     */
     public function __set(string $name, mixed $value)
     {
-        $this->$name = $value;
+        if (!isset($this->data[$name])) {
+            $this->data[$name] = new Data();
+        }
+
+        $this->data[$name]->data = $value;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return void
-     */
     public function __unset(string $name)
     {
-        unset($this->$name);
+        unset($this->data[$name]);
     }
 }

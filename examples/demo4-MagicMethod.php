@@ -4,7 +4,6 @@
 
     class A
     {
-        public mixed $b;
         use \Coco\magicAccess\MagicMethod;
     }
 
@@ -17,9 +16,11 @@
 
     //b
     echo $a->b[1]['0'];
+    echo PHP_EOL;
 
     //c
     echo $a->b[2][0]['h'];
+    echo PHP_EOL;
 
     print_r($a->b);
-    exit;;
+    echo PHP_EOL;
